@@ -12,3 +12,11 @@ def get_users_data(data:dict) -> list:
     Returns:
         list: users data list
     """
+    a=get_data.get_data("randomuser_data.json")
+    b=len(a["results"])
+    c=0
+    d=''
+    for birinchi in range(b):
+        d+=a["results"][birinchi]["name"]["first"]+', '+a["results"][birinchi]["name"]["last"]+', '+a["results"][birinchi]["phone"]+'\n'
+    return d
+print (get_users_data("salom"))

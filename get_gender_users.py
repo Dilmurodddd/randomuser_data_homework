@@ -13,3 +13,17 @@ def get_gender_users(data:dict) -> list:
     Returns:
         list: users get gender list
     """
+    male=0
+    female=0
+    a=get_data.get_data("randomuser_data.json")
+    b=len(a["results"])
+    for birinchi in range(b):
+        if a["results"][birinchi]["gender"]=="male":
+            male+=1
+
+        if a["results"][birinchi]["gender"]=="female":
+            female+=1
+
+    return male,female
+
+print(get_gender_users("salom"))
